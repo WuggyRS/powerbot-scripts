@@ -3,6 +3,7 @@ package scripts.spellwisps.tasks;
 import framework.taskscript.rt6.Task;
 
 import org.powerbot.script.rt6.ClientContext;
+import scripts.spellwisps.Spellwisps;
 
 import static scripts.spellwisps.constants.Constants.SPELLWISP_POSITION;
 
@@ -20,6 +21,9 @@ public class WalkToSpellwisps extends Task<ClientContext> {
     @Override
     public void execute() {
         if (ctx.players.local().inMotion() || ctx.movement.destination().distanceTo(ctx.players.local().tile()) < 5) return;
+
+        if (Spellwisps.bm.isPastBreakTime())
+            Spellwisps.bm.setNextBreakTime();
 
         ctx.movement.step(SPELLWISP_POSITION);
     }

@@ -35,6 +35,6 @@ public class LootAshes extends Task<ClientContext> {
         }
 
         loot.interact("Take", "Impious ashes");
-        Condition.sleep(Random.nextInt(250, 400));
+        Condition.wait(() -> !loot.valid(), 2500);
     }
 }
