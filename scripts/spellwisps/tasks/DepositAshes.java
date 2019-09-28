@@ -46,9 +46,9 @@ public class DepositAshes extends Task<ClientContext> {
 
 //        ctx.depositBox.deposit(IMPIOUS_ASHES, DepositBox.Amount.ALL);
 //        ctx.depositBox.depositInventory();
-        ctx.widgets.component(11, 16).interact("Deposit Carried Items");
+        ctx.widgets.component(11, 5).interact("Deposit Carried Items");
 
         //ctx.depositBox.close();
-        ctx.widgets.component(11, 13).interact("Close");
+        ctx.widgets.component(11, 23).component(1).interact("Close");
     }
 }
